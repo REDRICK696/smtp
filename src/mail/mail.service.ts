@@ -8,7 +8,7 @@ export class MailService {
 
   async sendUserConfirmation(user: User, token: string) {
     // const url = `http://localhost:3000/auth/confirm?token=${token}`;
-
+    console.log(user.email), console.log('before sendMail');
     await this.mailerService.sendMail({
       to: user.email,
       //from: '"Support Team" <support@example.com>', // override default from
@@ -16,9 +16,11 @@ export class MailService {
       template: './confirmation', // `.hbs` extension is appended automatically
       context: {
         // ✏️ filling curly brackets with content
-        name: 'person',
+        name: user.name,
+        //name: 'person',
         url: 'link',
       },
     });
+    console.log('after sendMail');
   }
 }

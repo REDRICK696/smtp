@@ -3,7 +3,7 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
 import { Global, Module } from '@nestjs/common';
 import { MailService } from './mail.service';
 import { join } from 'path';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigService } from '@nestjs/config';
 
 @Global()
 @Module({
@@ -14,8 +14,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       useFactory: async (config: ConfigService) => ({
         transport: {
           host: config.get('MAIL_HOST'),
-          secure: false,
-          ignoreTLS: true,
+          port: 465,
+          secure: true,
           auth: {
             user: config.get('MAIL_USER'),
             pass: config.get('MAIL_PASSWORD'),

@@ -11,7 +11,7 @@ export class AuthService {
     const token = Math.floor(1000 + Math.random() * 9000).toString();
     // create user in db
     // ...
-    // send confirmation mail
+    // send confirmation mail    
     await this.mailService.sendUserConfirmation(user, token);
   }
 }
