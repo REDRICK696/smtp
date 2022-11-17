@@ -4,29 +4,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
-  imports: [ConfigModule.forRoot()],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: 'src/.env',
+    }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-
-// @Module({
-//   imports: [
-//     ConfigModule.forRoot({
-//       isGlobal: true,
-//       envFilePath: './.env',
-//     }),
-//   ],
-//   controllers: [AppController],
-//   providers: [AppService],
-// })
-
-// @Module({
-//   imports: [AuthModule,
-//     ConfigModule.forRoot({
-//       isGlobal: true, // no need to import into other modules
-//     }),
-//   ],
-//   controllers: [AppController],
-//   providers: [AppService],
-// })
 export class AppModule {}

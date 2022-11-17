@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { User } from 'src/user.entity';
-import { MailService } from './../mail/mail.service';
+import { MailService } from '../mail.service';
 
 @Injectable()
 export class AuthService {

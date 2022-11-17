@@ -30,6 +30,7 @@
     "handlebars": "^4.7.7",
     "nest": "^0.1.6",
     "nestjs-modules": "^1.0.9",
+    "node-env-file": "^0.1.8",
     "nodemailer": "^6.8.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",

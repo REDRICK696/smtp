@@ -5,7 +5,6 @@ import { ConfigService } from '@nestjs/config';
 export class AppService {
   constructor(private config: ConfigService) {}
   getHello(): string {
-    console.log(this.config.get('MAIL_HOST'));
-    return this.config.get('MAIL_HOST') ?? 'undefined config';
+    return this.config.get('MAIL_HOST') ?? 'undefined';
   }
 }
